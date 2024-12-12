@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "937ffef7-d6d2-489d-af41-a7f2f71cf555",
+		"name": "API Endpoint Task 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "39689168"
+	},
+	"item": [
+		{
+			"name": "Добавление лет к дате",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct sum\", function () {\r",
+							"    pm.expect(pm.response.json().sum).to.equal(\"Sun Oct 10 2021 00:00:00 GMT+0000\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/time/add?timestamp=2016-10-10&years=5",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"time",
+						"add"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2016-10-10"
+						},
+						{
+							"key": "years",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление месяцев к дате",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct sum\", function () {\r",
+							"    pm.expect(pm.response.json().sum).to.equal(\"Tue Jan 10 2017 00:00:00 GMT+0000\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/time/add?timestamp=2016-10-10&months=3",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"time",
+						"add"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2016-10-10"
+						},
+						{
+							"key": "months",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление дней к дате",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct sum\", function () {\r",
+							"    pm.expect(pm.response.json().sum).to.equal(\"Thu Oct 20 2016 00:00:00 GMT+0000\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/time/add?timestamp=2016-10-10&days=10",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"time",
+						"add"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2016-10-10"
+						},
+						{
+							"key": "days",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление часов к дате",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct sum\", function () {\r",
+							"    pm.expect(pm.response.json().sum).to.equal(\"Mon Oct 10 2016 17:00:00 GMT+0000\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/time/add?timestamp=2016-10-10T12:00:00&hours=5",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"time",
+						"add"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2016-10-10T12:00:00"
+						},
+						{
+							"key": "hours",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление секунд к дате",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct sum\", function () {\r",
+							"    pm.expect(pm.response.json().sum).to.equal(\"Mon Oct 10 2016 12:01:00 GMT+0000\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/time/add?timestamp=2016-10-10T12:00:00Z&seconds=60",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"time",
+						"add"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2016-10-10T12:00:00Z"
+						},
+						{
+							"key": "seconds",
+							"value": "60"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление минут к дате",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct sum\", function () {\r",
+							"    pm.expect(pm.response.json().sum).to.equal(\"Mon Oct 10 2016 12:35:00 GMT+0000\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/time/add?timestamp=2016-10-10T12:00:00Z&minutes=35",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"time",
+						"add"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2016-10-10T12:00:00Z"
+						},
+						{
+							"key": "minutes",
+							"value": "35"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Проверка формата даты с параметром locale",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Correct sum\", function () {\r",
+							"    pm.expect(pm.response.json().sum).to.eql(\"Sun Oct 10 2021 00:00:00 GMT+0000\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://postman-echo.com/time/add?timestamp=2016-10-10&years=5&locale=ru",
+					"protocol": "https",
+					"host": [
+						"postman-echo",
+						"com"
+					],
+					"path": [
+						"time",
+						"add"
+					],
+					"query": [
+						{
+							"key": "timestamp",
+							"value": "2016-10-10"
+						},
+						{
+							"key": "years",
+							"value": "5"
+						},
+						{
+							"key": "locale",
+							"value": "ru"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
